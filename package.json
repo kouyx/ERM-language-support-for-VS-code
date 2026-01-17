@@ -1,0 +1,79 @@
+{
+  "name": "erm-language-support",
+  "displayName": "ERM Language Support",
+  "version": "1.0.0",
+  "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.108.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "erm",
+        "aliases": ["ERM", "ERM Script"],
+        "extensions": [".erm"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "erm",
+        "scopeName": "source.erm",
+        "path": "./syntaxes/erm.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "erm",
+        "path": "./snippets/erm.code-snippets"
+      }
+    ],
+    "commands": [
+      {
+        "command": "erm-language-support.toggleErmComment",
+        "title": "ERM: Toggle Code Comment",
+        "category": "ERM"
+      },
+      {
+        "command": "erm-language-support.formatErmInlineComment",
+        "title": "ERM: Format Inline Comment",
+        "category": "ERM"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "erm-language-support.toggleErmComment",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "editorTextFocus && editorLangId == erm"
+      },
+      {
+        "command": "erm-language-support.formatErmInlineComment",
+        "key": "alt+f",
+        "mac": "option+f",
+        "when": "editorTextFocus && editorLangId == erm"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:erm",
+    "onCommand:erm-language-support.toggleErmComment",
+    "onCommand:erm-language-support.formatErmInlineComment"
+  ]
+}

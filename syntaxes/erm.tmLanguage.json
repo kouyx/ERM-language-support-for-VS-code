@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ERM",
+  "scopeName": "source.erm",
+  "fileTypes": ["erm"],
+  "firstLineMatch": "^ZVSE",
+  "patterns": [
+    { "include": "#header" },
+    { "include": "#comment" },
+
+    { "include": "#receiver_bangbang" },
+    { "include": "#instruction_banghash" },
+
+    { "include": "#trigger_fun" },
+    { "include": "#trigger_misc" },
+
+    { "include": "#erm_operator" }
+  ],
+
+  "repository": {
+    "header": {
+      "match": "^ZVSE2?",
+      "name": "keyword.operator.erm"
+    },
+
+    "comment": {
+      "begin": ";",
+      "end": "$",
+      "name": "comment.line.erm"
+    },
+
+    "receiver_bangbang": {
+      "begin": "(!!)([A-Za-z]{2})",
+      "beginCaptures": {
+        "1": { "name": "keyword.operator.receiver.erm" },
+        "2": { "name": "keyword.operator.receiver_name.erm" }
+      },
+      "end": "$",
+      "name": "receiver.erm",
+      "patterns": [
+        { "include": "#erm_operator" },
+        { "match": "[A-Z]", "name": "command.erm" }
+      ]
+    },
+
+    "instruction_banghash": {
+      "begin": "(!#)([A-Z]{2})",
+      "beginCaptures": {
+        "1": { "name": "keyword.operator.instruction.erm" },
+        "2": { "name": "keyword.operator.instruction_name.erm" }
+      },
+      "end": "$",
+      "name": "receiver.erm",
+      "patterns": [
+        { "include": "#erm_operator" }
+      ]
+    },
+
+    "trigger_fun": {
+      "begin": "(!\\?FU)(?:(?:(\\d+)|(\\()([^)]+)(\\)))?)",
+      "beginCaptures": {
+        "1": { "name": "keyword.operator.trigger.erm" },
+        "2": { "name": "entity.name.type.trigger.erm" },
+        "3": { "name": "decorator.function_name.erm" },
+        "4": { "name": "entity.name.type.trigger.erm" },
+        "5": { "name": "decorator.function_name.erm" }
+      },
+      "end": "$",
+      "name": "trigger.erm",
+      "patterns": [
+        { "include": "#erm_operator" }
+      ]
+    },
+
+    "trigger_misc": {
+      "match": "(![?$][A-Z]{2})",
+      "captures": {
+        "1": { "name": "keyword.operator.trigger.erm" }
+      }
+    },
+
+    "string_caret": {
+      "begin": "\\^",
+      "end": "\\^",
+      "name": "string.caret.erm",
+      "patterns": [
+        {
+          "match": "(%)(%|\\\\:|\\\\\"|([a-zA-Z]?\\([^\\)\\r\\n]*\\)?)|[a-zA-Z](?:[f-t]|-?\\d*))",
+          "captures": {
+            "1": { "name": "keyword.operator.interpolation.erm" },
+            "2": { "name": "string.interpolation.erm" }
+          }
+        },
+        {
+          "match": "(?<!%)(%)(\\([^)]*\\)?)",
+          "captures": {
+            "1": { "name": "keyword.operator.interpolation.erm" },
+            "2": { "name": "string.interpolation.erm" }
+          }
+        }
+      ]
+    },
+
+    "erm_operator": {
+      "patterns": [
+        { "include": "#string_caret" },
+        { "match": "([g-t]|[xyvzwefc](?:-?\\d+)?)", "name": "variable.erm" },
+        { "match": "\\d+", "name": "constant.numeric.erm" },
+        { "match": "\\([^)]+\\)", "name": "constant.named.erm" },
+        { "match": "\\[[^\\]]+\\]", "name": "variable.label.erm" },
+        { "match": "@[^@]*@?", "name": "string.macro_declaration.erm" },
+        { "match": "\\$[^$]*\\$?", "name": "string.macro.erm" }
+      ]
+    }
+  }
+}

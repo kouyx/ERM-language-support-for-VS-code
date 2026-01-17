@@ -1,0 +1,1327 @@
+{
+  "ERM If Statement": {
+    "prefix": "erm_if",
+    "body": [
+      "!!if&${1:condition};",
+      "\t${2:// code here};",
+      "!!en;"
+    ],
+    "description": "ERM If Block"
+  },
+  "ERM If-Else Statement": {
+    "prefix": "erm_ife",
+    "body": [
+      "!!if&${1:condition};",
+      "\t${2:// code here};",
+      "!!el;",
+      "\t${3:// else code};",
+      "!!en;"
+    ],
+    "description": "ERM If-Else Block"
+  },
+  "ERM Repeat Definition": {
+    "prefix": "erm_repeat",
+    "body": [
+      "!!re ${1:i}/${2:0}/(${3:end_value});",
+      "\t${4:// code here};",
+      "!!en;"
+    ],
+    "description": "ERM Repeat X times Definition"
+  },
+  "ERM Receiver Definition": {
+    "prefix": "erm_receiver",
+    "body": [
+      "!!${1:name}:${2:option};"
+    ],
+    "description": "ERM Receiver Definition"
+  },
+  "ERM Standard Function: fu": {
+    "prefix": "erm_fu",
+    "body": [
+      "!!FU(${1:function_name}):P${2:params};"
+    ],
+    "description": "ERM Standard Function Call"
+  },
+  "ERM Trigger Definition": {
+    "prefix": "erm_trigger",
+    "body": [
+      "!?FU(${1:name};",
+      "\t${2:// code here};",
+    ],
+    "description": "ERM Trigger Definition"
+  },
+  "FILE": {
+    "prefix": "FILE",
+    "body": [
+      "FILE"
+    ],
+    "description": "FILE"
+  },
+  "LINE": {
+    "prefix": "LINE",
+    "body": [
+      "LINE"
+    ],
+    "description": "LINE"
+  },
+  "CODE": {
+    "prefix": "CODE",
+    "body": [
+      "CODE"
+    ],
+    "description": "CODE"
+  },
+  "FLOAT_INF": {
+    "prefix": "FLOAT_INF",
+    "body": [
+      "FLOAT_INF"
+    ],
+    "description": "FLOAT_INF"
+  },
+  "FLOAT_NEG_INF": {
+    "prefix": "FLOAT_NEG_INF",
+    "body": [
+      "FLOAT_NEG_INF"
+    ],
+    "description": "FLOAT_NEG_INF"
+  },
+  "ADDR_GAME_SCREEN_HEIGHT": {
+    "prefix": "ADDR_GAME_SCREEN_HEIGHT",
+    "body": [
+      "ADDR_GAME_SCREEN_HEIGHT"
+    ],
+    "description": "ADDR_GAME_SCREEN_HEIGHT"
+  },
+  "ADDR_GAME_SCREEN_WIDTH": {
+    "prefix": "ADDR_GAME_SCREEN_WIDTH",
+    "body": [
+      "ADDR_GAME_SCREEN_WIDTH"
+    ],
+    "description": "ADDR_GAME_SCREEN_WIDTH"
+  },
+  "ADDR_MARKED_SAVEGAME_NAME": {
+    "prefix": "ADDR_MARKED_SAVEGAME_NAME",
+    "body": [
+      "ADDR_MARKED_SAVEGAME_NAME"
+    ],
+    "description": "ADDR_MARKED_SAVEGAME_NAME"
+  },
+  "ADDR_WOG_SPELLS_TABLE": {
+    "prefix": "ADDR_WOG_SPELLS_TABLE",
+    "body": [
+      "ADDR_WOG_SPELLS_TABLE"
+    ],
+    "description": "ADDR_WOG_SPELLS_TABLE"
+  },
+  "ADV_MAP_MON_MAX_QUANTITY": {
+    "prefix": "ADV_MAP_MON_MAX_QUANTITY",
+    "body": [
+      "ADV_MAP_MON_MAX_QUANTITY"
+    ],
+    "description": "ADV_MAP_MON_MAX_QUANTITY"
+  },
+  "ADV_MON_AGGRESSION_AGGRESSIVE_MAX": {
+    "prefix": "ADV_MON_AGGRESSION_AGGRESSIVE_MAX",
+    "body": [
+      "ADV_MON_AGGRESSION_AGGRESSIVE_MAX"
+    ],
+    "description": "ADV_MON_AGGRESSION_AGGRESSIVE_MAX"
+  },
+  "ADV_MON_AGGRESSION_AGGRESSIVE_MIN": {
+    "prefix": "ADV_MON_AGGRESSION_AGGRESSIVE_MIN",
+    "body": [
+      "ADV_MON_AGGRESSION_AGGRESSIVE_MIN"
+    ],
+    "description": "ADV_MON_AGGRESSION_AGGRESSIVE_MIN"
+  },
+  "ADV_MON_AGGRESSION_COMPLIENT": {
+    "prefix": "ADV_MON_AGGRESSION_COMPLIENT",
+    "body": [
+      "ADV_MON_AGGRESSION_COMPLIENT"
+    ],
+    "description": "ADV_MON_AGGRESSION_COMPLIENT"
+  },
+  "ADV_MON_AGGRESSION_FRIENDLY_MAX": {
+    "prefix": "ADV_MON_AGGRESSION_FRIENDLY_MAX",
+    "body": [
+      "ADV_MON_AGGRESSION_FRIENDLY_MAX"
+    ],
+    "description": "ADV_MON_AGGRESSION_FRIENDLY_MAX"
+  },
+  "ADV_MON_AGGRESSION_FRIENDLY_MIN": {
+    "prefix": "ADV_MON_AGGRESSION_FRIENDLY_MIN",
+    "body": [
+      "ADV_MON_AGGRESSION_FRIENDLY_MIN"
+    ],
+    "description": "ADV_MON_AGGRESSION_FRIENDLY_MIN"
+  },
+  "ADV_MON_AGGRESSION_HOSTILE_MAX": {
+    "prefix": "ADV_MON_AGGRESSION_HOSTILE_MAX",
+    "body": [
+      "ADV_MON_AGGRESSION_HOSTILE_MAX"
+    ],
+    "description": "ADV_MON_AGGRESSION_HOSTILE_MAX"
+  },
+  "ADV_MON_AGGRESSION_HOSTILE_MIN": {
+    "prefix": "ADV_MON_AGGRESSION_HOSTILE_MIN",
+    "body": [
+      "ADV_MON_AGGRESSION_HOSTILE_MIN"
+    ],
+    "description": "ADV_MON_AGGRESSION_HOSTILE_MIN"
+  },
+  "ADV_MON_AGGRESSION_MAX": {
+    "prefix": "ADV_MON_AGGRESSION_MAX",
+    "body": [
+      "ADV_MON_AGGRESSION_MAX"
+    ],
+    "description": "ADV_MON_AGGRESSION_MAX"
+  },
+  "ADV_MON_AGGRESSION_MIN": {
+    "prefix": "ADV_MON_AGGRESSION_MIN",
+    "body": [
+      "ADV_MON_AGGRESSION_MIN"
+    ],
+    "description": "ADV_MON_AGGRESSION_MIN"
+  },
+  "ADV_MON_AGGRESSION_SAVAGE": {
+    "prefix": "ADV_MON_AGGRESSION_SAVAGE",
+    "body": [
+      "ADV_MON_AGGRESSION_SAVAGE"
+    ],
+    "description": "ADV_MON_AGGRESSION_SAVAGE"
+  },
+  "ANY_ART": {
+    "prefix": "ANY_ART",
+    "body": [
+      "ANY_ART"
+    ],
+    "description": "ANY_ART"
+  },
+  "ANY_HERO": {
+    "prefix": "ANY_HERO",
+    "body": [
+      "ANY_HERO"
+    ],
+    "description": "ANY_HERO"
+  },
+  "ANY_MON": {
+    "prefix": "ANY_MON",
+    "body": [
+      "ANY_MON"
+    ],
+    "description": "ANY_MON"
+  },
+  "ANY_OBJ": {
+    "prefix": "ANY_OBJ",
+    "body": [
+      "ANY_OBJ"
+    ],
+    "description": "ANY_OBJ"
+  },
+  "ANY_OWNER": {
+    "prefix": "ANY_OWNER",
+    "body": [
+      "ANY_OWNER"
+    ],
+    "description": "ANY_OWNER"
+  },
+  "ANY_PLAYER": {
+    "prefix": "ANY_PLAYER",
+    "body": [
+      "ANY_PLAYER"
+    ],
+    "description": "ANY_PLAYER"
+  },
+  "OnAdventureMapLeftMouseClick": {
+    "prefix": "OnAdventureMapLeftMouseClick",
+    "body": [
+      "OnAdventureMapLeftMouseClick"
+    ],
+    "description": "OnAdventureMapLeftMouseClick"
+  },
+  "OnAdventureMapRightMouseClick": {
+    "prefix": "OnAdventureMapRightMouseClick",
+    "body": [
+      "OnAdventureMapRightMouseClick"
+    ],
+    "description": "OnAdventureMapRightMouseClick"
+  },
+  "OnAdvMapTileHint": {
+    "prefix": "OnAdvMapTileHint",
+    "body": [
+      "OnAdvMapTileHint"
+    ],
+    "description": "OnAdvMapTileHint"
+  },
+  "OnAfterAdventureMagic": {
+    "prefix": "OnAfterAdventureMagic",
+    "body": [
+      "OnAfterAdventureMagic"
+    ],
+    "description": "OnAfterAdventureMagic"
+  },
+  "OnAfterBattle": {
+    "prefix": "OnAfterBattle",
+    "body": [
+      "OnAfterBattle"
+    ],
+    "description": "OnAfterBattle"
+  },
+  "OnAfterBattleAction": {
+    "prefix": "OnAfterBattleAction",
+    "body": [
+      "OnAfterBattleAction"
+    ],
+    "description": "OnAfterBattleAction"
+  },
+  "OnAfterBattleAfterDataReceived": {
+    "prefix": "OnAfterBattleAfterDataReceived",
+    "body": [
+      "OnAfterBattleAfterDataReceived"
+    ],
+    "description": "OnAfterBattleAfterDataReceived"
+  },
+  "OnAfterBattleBeforeDataSend": {
+    "prefix": "OnAfterBattleBeforeDataSend",
+    "body": [
+      "OnAfterBattleBeforeDataSend"
+    ],
+    "description": "OnAfterBattleBeforeDataSend"
+  },
+  "OnAfterBattleForThisPcDefender": {
+    "prefix": "OnAfterBattleForThisPcDefender",
+    "body": [
+      "OnAfterBattleForThisPcDefender"
+    ],
+    "description": "OnAfterBattleForThisPcDefender"
+  },
+  "OnAfterBattleSetup": {
+    "prefix": "OnAfterBattleSetup",
+    "body": [
+      "OnAfterBattleSetup"
+    ],
+    "description": "OnAfterBattleSetup"
+  },
+  "OnAfterBattleUniversal": {
+    "prefix": "OnAfterBattleUniversal",
+    "body": [
+      "OnAfterBattleUniversal"
+    ],
+    "description": "OnAfterBattleUniversal"
+  },
+  "OnAfterCommanderBuy": {
+    "prefix": "OnAfterCommanderBuy",
+    "body": [
+      "OnAfterCommanderBuy"
+    ],
+    "description": "OnAfterCommanderBuy"
+  },
+  "OnAfterCommanderResurrect": {
+    "prefix": "OnAfterCommanderResurrect",
+    "body": [
+      "OnAfterCommanderResurrect"
+    ],
+    "description": "OnAfterCommanderResurrect"
+  },
+  "OnAfterErmInstructions": {
+    "prefix": "OnAfterErmInstructions",
+    "body": [
+      "OnAfterErmInstructions"
+    ],
+    "description": "OnAfterErmInstructions"
+  },
+  "OnAfterHeroGainLevel": {
+    "prefix": "OnAfterHeroGainLevel",
+    "body": [
+      "OnAfterHeroGainLevel"
+    ],
+    "description": "OnAfterHeroGainLevel"
+  },
+  "OnAfterHeroInteraction": {
+    "prefix": "OnAfterHeroInteraction",
+    "body": [
+      "OnAfterHeroInteraction"
+    ],
+    "description": "OnAfterHeroInteraction"
+  },
+  "OnAfterLoadGame": {
+    "prefix": "OnAfterLoadGame",
+    "body": [
+      "OnAfterLoadGame"
+    ],
+    "description": "OnAfterLoadGame"
+  },
+  "OnAfterLocalEvent": {
+    "prefix": "OnAfterLocalEvent",
+    "body": [
+      "OnAfterLocalEvent"
+    ],
+    "description": "OnAfterLocalEvent"
+  },
+  "OnAfterSaveGame": {
+    "prefix": "OnAfterSaveGame",
+    "body": [
+      "OnAfterSaveGame"
+    ],
+    "description": "OnAfterSaveGame"
+  },
+  "OnAfterTacticsPhase": {
+    "prefix": "OnAfterTacticsPhase",
+    "body": [
+      "OnAfterTacticsPhase"
+    ],
+    "description": "OnAfterTacticsPhase"
+  },
+  "OnAICalcStackAttackEffect": {
+    "prefix": "OnAICalcStackAttackEffect",
+    "body": [
+      "OnAICalcStackAttackEffect"
+    ],
+    "description": "OnAICalcStackAttackEffect"
+  },
+  "OnBattleActionEnd": {
+    "prefix": "OnBattleActionEnd",
+    "body": [
+      "OnBattleActionEnd"
+    ],
+    "description": "OnBattleActionEnd"
+  },
+  "OnBattlefieldVisible": {
+    "prefix": "OnBattlefieldVisible",
+    "body": [
+      "OnBattlefieldVisible"
+    ],
+    "description": "OnBattlefieldVisible"
+  },
+  "OnBattleMouseHint": {
+    "prefix": "OnBattleMouseHint",
+    "body": [
+      "OnBattleMouseHint"
+    ],
+    "description": "OnBattleMouseHint"
+  },
+  "AdvMap_SetHint": {
+    "prefix": "AdvMap_SetHint",
+    "body": [
+      "AdvMap_SetHint"
+    ],
+    "description": "AdvMap_SetHint"
+  },
+  "Array_Clone": {
+    "prefix": "Array_Clone",
+    "body": [
+      "Array_Clone"
+    ],
+    "description": "Array_Clone"
+  },
+  "Array_Copy": {
+    "prefix": "Array_Copy",
+    "body": [
+      "Array_Copy"
+    ],
+    "description": "Array_Copy"
+  },
+  "Array_CustomSort": {
+    "prefix": "Array_CustomSort",
+    "body": [
+      "Array_CustomSort"
+    ],
+    "description": "Array_CustomSort"
+  },
+  "Array_EnsureMinSize": {
+    "prefix": "Array_EnsureMinSize",
+    "body": [
+      "Array_EnsureMinSize"
+    ],
+    "description": "Array_EnsureMinSize"
+  },
+  "Array_Fill": {
+    "prefix": "Array_Fill",
+    "body": [
+      "Array_Fill"
+    ],
+    "description": "Array_Fill"
+  },
+  "Array_Join": {
+    "prefix": "Array_Join",
+    "body": [
+      "Array_Join"
+    ],
+    "description": "Array_Join"
+  },
+  "Array_Merge": {
+    "prefix": "Array_Merge",
+    "body": [
+      "Array_Merge"
+    ],
+    "description": "Array_Merge"
+  },
+  "Array_Pop": {
+    "prefix": "Array_Pop",
+    "body": [
+      "Array_Pop"
+    ],
+    "description": "Array_Pop"
+  },
+  "Array_Push": {
+    "prefix": "Array_Push",
+    "body": [
+      "Array_Push"
+    ],
+    "description": "Array_Push"
+  },
+  "Array_Resize": {
+    "prefix": "Array_Resize",
+    "body": [
+      "Array_Resize"
+    ],
+    "description": "Array_Resize"
+  },
+  "Array_Revert": {
+    "prefix": "Array_Revert",
+    "body": [
+      "Array_Revert"
+    ],
+    "description": "Array_Revert"
+  },
+  "Array_Shuffle": {
+    "prefix": "Array_Shuffle",
+    "body": [
+      "Array_Shuffle"
+    ],
+    "description": "Array_Shuffle"
+  },
+  "Array_Slice": {
+    "prefix": "Array_Slice",
+    "body": [
+      "Array_Slice"
+    ],
+    "description": "Array_Slice"
+  },
+  "Array_Sort": {
+    "prefix": "Array_Sort",
+    "body": [
+      "Array_Sort"
+    ],
+    "description": "Array_Sort"
+  },
+  "Array_SortedUnique": {
+    "prefix": "Array_SortedUnique",
+    "body": [
+      "Array_SortedUnique"
+    ],
+    "description": "Array_SortedUnique"
+  },
+  "BattleStack_Shoot": {
+    "prefix": "BattleStack_Shoot",
+    "body": [
+      "BattleStack_Shoot"
+    ],
+    "description": "BattleStack_Shoot"
+  },
+  "ClearIniCache": {
+    "prefix": "ClearIniCache",
+    "body": [
+      "ClearIniCache"
+    ],
+    "description": "ClearIniCache"
+  },
+  "ClearScreenLog": {
+    "prefix": "ClearScreenLog",
+    "body": [
+      "ClearScreenLog"
+    ],
+    "description": "ClearScreenLog"
+  },
+  "CollectMouseEventData": {
+    "prefix": "CollectMouseEventData",
+    "body": [
+      "CollectMouseEventData"
+    ],
+    "description": "CollectMouseEventData"
+  },
+  "CompareStrings": {
+    "prefix": "CompareStrings",
+    "body": [
+      "CompareStrings"
+    ],
+    "description": "CompareStrings"
+  },
+  "ConstructBitMask": {
+    "prefix": "ConstructBitMask",
+    "body": [
+      "ConstructBitMask"
+    ],
+    "description": "ConstructBitMask"
+  },
+  "CreateDir": {
+    "prefix": "CreateDir",
+    "body": [
+      "CreateDir"
+    ],
+    "description": "CreateDir"
+  },
+  "DeconstructBitMask": {
+    "prefix": "DeconstructBitMask",
+    "body": [
+      "DeconstructBitMask"
+    ],
+    "description": "DeconstructBitMask"
+  },
+  "DecorateInt": {
+    "prefix": "DecorateInt",
+    "body": [
+      "DecorateInt"
+    ],
+    "description": "DecorateInt"
+  },
+  "DeleteFile": {
+    "prefix": "DeleteFile",
+    "body": [
+      "DeleteFile"
+    ],
+    "description": "DeleteFile"
+  },
+  "VA - !#VA (declare variables)": {
+    "prefix": "va",
+    "body": [
+      "!#VA($0)"
+    ],
+    "description": "!#VA (declare variables)"
+  },
+  "DC - !#DC (define consts)": {
+    "prefix": "dc",
+    "body": [
+      "!#DC($0)"
+    ],
+    "description": "!#DC (define consts)"
+  },
+  "AI - !!AI": {
+    "prefix": "ai",
+    "body": [
+      "!!AI:"
+    ],
+    "description": "!!AI"
+  },
+  "AR - !!AR": {
+    "prefix": "ar",
+    "body": [
+      "!!AR"
+    ],
+    "description": "!!AR"
+  },
+  "BA - !!BA": {
+    "prefix": "ba",
+    "body": [
+      "!!BA:"
+    ],
+    "description": "!!BA"
+  },
+  "BF - !!BF": {
+    "prefix": "bf",
+    "body": [
+      "!!BF:"
+    ],
+    "description": "!!BF"
+  },
+  "BG - !!BG": {
+    "prefix": "bg",
+    "body": [
+      "!!BG:"
+    ],
+    "description": "!!BG"
+  },
+  "BH - !!BH": {
+    "prefix": "bh",
+    "body": [
+      "!!BH"
+    ],
+    "description": "!!BH"
+  },
+  "BM - !!BM": {
+    "prefix": "bm",
+    "body": [
+      "!!BM"
+    ],
+    "description": "!!BM"
+  },
+  "BU - !!BU": {
+    "prefix": "bu",
+    "body": [
+      "!!BU:"
+    ],
+    "description": "!!BU"
+  },
+  "CA - !!CA": {
+    "prefix": "ca",
+    "body": [
+      "!!CA"
+    ],
+    "description": "!!CA"
+  },
+  "CB - !!CB": {
+    "prefix": "cb",
+    "body": [
+      "!!CB"
+    ],
+    "description": "!!CB"
+  },
+  "CD - !!CD": {
+    "prefix": "cd",
+    "body": [
+      "!!CD:"
+    ],
+    "description": "!!CD"
+  },
+  "CE - !!CE": {
+    "prefix": "ce",
+    "body": [
+      "!!CE"
+    ],
+    "description": "!!CE"
+  },
+  "CH - !!CH": {
+    "prefix": "ch",
+    "body": [
+      "!!CH"
+    ],
+    "description": "!!CH"
+  },
+  "CM - !!CM": {
+    "prefix": "cm",
+    "body": [
+      "!!CM:"
+    ],
+    "description": "!!CM"
+  },
+  "CO - !!CO": {
+    "prefix": "co",
+    "body": [
+      "!!CO"
+    ],
+    "description": "!!CO"
+  },
+  "DL - !!DL": {
+    "prefix": "dl",
+    "body": [
+      "!!DL"
+    ],
+    "description": "!!DL"
+  },
+  "DO - !!DO": {
+    "prefix": "do",
+    "body": [
+      "!!DO"
+    ],
+    "description": "!!DO"
+  },
+  "DW - !!DW": {
+    "prefix": "dw",
+    "body": [
+      "!!DW"
+    ],
+    "description": "!!DW"
+  },
+  "EA - !!EA": {
+    "prefix": "ea",
+    "body": [
+      "!!EA"
+    ],
+    "description": "!!EA"
+  },
+  "EX - !!EX": {
+    "prefix": "ex",
+    "body": [
+      "!!EX"
+    ],
+    "description": "!!EX"
+  },
+  "FR - !!FR": {
+    "prefix": "fr",
+    "body": [
+      "!!FR"
+    ],
+    "description": "!!FR"
+  },
+  "GD - !!GD": {
+    "prefix": "gd",
+    "body": [
+      "!!GD"
+    ],
+    "description": "!!GD"
+  },
+  "GE - !!GE": {
+    "prefix": "ge",
+    "body": [
+      "!!GE"
+    ],
+    "description": "!!GE"
+  },
+  "GR - !!GR": {
+    "prefix": "gr",
+    "body": [
+      "!!GR"
+    ],
+    "description": "!!GR"
+  },
+  "HE - !!HE": {
+    "prefix": "he",
+    "body": [
+      "!!HE"
+    ],
+    "description": "!!HE"
+  },
+  "HL - !!HL": {
+    "prefix": "hl",
+    "body": [
+      "!!HL:"
+    ],
+    "description": "!!HL"
+  },
+  "HO - !!HO": {
+    "prefix": "ho",
+    "body": [
+      "!!HO"
+    ],
+    "description": "!!HO"
+  },
+  "HT - !!HT": {
+    "prefix": "ht",
+    "body": [
+      "!!HT"
+    ],
+    "description": "!!HT"
+  },
+  "IF - !!IF": {
+    "prefix": "iff",
+    "body": [
+      "!!IF:"
+    ],
+    "description": "!!IF"
+  },
+  "IF:L - !!IF:L (line)": {
+    "prefix": "ifl",
+    "body": [
+      "!!IF:L^$0^;"
+    ],
+    "description": "!!IF:L"
+  },
+  "IF:M - !!IF:M (multiline)": {
+    "prefix": "ifm",
+    "body": [
+      "!!IF:M^$0^;"
+    ],
+    "description": "!!IF:M"
+  },
+  "IP - !!IP": {
+    "prefix": "ip",
+    "body": [
+      "!!IP:"
+    ],
+    "description": "!!IP"
+  },
+  "KT - !!KT": {
+    "prefix": "kt",
+    "body": [
+      "!!KT"
+    ],
+    "description": "!!KT"
+  },
+  "LE - !!LE": {
+    "prefix": "le",
+    "body": [
+      "!!LE"
+    ],
+    "description": "!!LE"
+  },
+  "LN - !!LN": {
+    "prefix": "ln",
+    "body": [
+      "!!LN"
+    ],
+    "description": "!!LN"
+  },
+  "MA - !!MA": {
+    "prefix": "ma",
+    "body": [
+      "!!MA:"
+    ],
+    "description": "!!MA"
+  },
+  "MC - !!MC": {
+    "prefix": "mc",
+    "body": [
+      "!!MC"
+    ],
+    "description": "!!MC"
+  },
+  "MF - !!MF": {
+    "prefix": "mf",
+    "body": [
+      "!!MF:"
+    ],
+    "description": "!!MF"
+  },
+  "ML - !!ML": {
+    "prefix": "ml",
+    "body": [
+      "!!ML"
+    ],
+    "description": "!!ML"
+  },
+  "MM - !!MM": {
+    "prefix": "mm",
+    "body": [
+      "!!MM:"
+    ],
+    "description": "!!MM"
+  },
+  "MN - !!MN": {
+    "prefix": "mn",
+    "body": [
+      "!!MN"
+    ],
+    "description": "!!MN"
+  },
+  "MO - !!MO": {
+    "prefix": "mo",
+    "body": [
+      "!!MO"
+    ],
+    "description": "!!MO"
+  },
+  "MP - !!MP": {
+    "prefix": "mp",
+    "body": [
+      "!!MP:"
+    ],
+    "description": "!!MP"
+  },
+  "MR - !!MR": {
+    "prefix": "mr",
+    "body": [
+      "!!MR:"
+    ],
+    "description": "!!MR"
+  },
+  "MT - !!MT": {
+    "prefix": "mt",
+    "body": [
+      "!!MT"
+    ],
+    "description": "!!MT"
+  },
+  "MW - !!MW": {
+    "prefix": "mw",
+    "body": [
+      "!!MW"
+    ],
+    "description": "!!MW"
+  },
+  "OB - !!OB": {
+    "prefix": "ob",
+    "body": [
+      "!!OB"
+    ],
+    "description": "!!OB"
+  },
+  "OW - !!OW": {
+    "prefix": "ow",
+    "body": [
+      "!!OW:"
+    ],
+    "description": "!!OW"
+  },
+  "PO - !!PO": {
+    "prefix": "po",
+    "body": [
+      "!!PO"
+    ],
+    "description": "!!PO"
+  },
+  "QW - !!QW": {
+    "prefix": "qw",
+    "body": [
+      "!!QW:"
+    ],
+    "description": "!!QW"
+  },
+  "RD - !!RD": {
+    "prefix": "rd",
+    "body": [
+      "!!RD:"
+    ],
+    "description": "!!RD"
+  },
+  "SC - !!SC": {
+    "prefix": "sc",
+    "body": [
+      "!!SC"
+    ],
+    "description": "!!SC"
+  },
+  "SG - !!SG": {
+    "prefix": "sg",
+    "body": [
+      "!!SG"
+    ],
+    "description": "!!SG"
+  },
+  "SK - !!SK": {
+    "prefix": "sk",
+    "body": [
+      "!!SK"
+    ],
+    "description": "!!SK"
+  },
+  "SN - !!SN": {
+    "prefix": "sn",
+    "body": [
+      "!!SN:"
+    ],
+    "description": "!!SN"
+  },
+  "SN:M - !!SN:M (complex)": {
+    "prefix": "snm",
+    "body": [
+      "!!SN:M(M_AUTO_ID)/${1:(NUM_ITEMS)}/(${2:M_INT})/(${3:M_TRIGGER_LOCAL})/?(${4:array:y});$0"
+    ],
+    "description": "!!SN:M"
+  },
+  "SP - !!SP": {
+    "prefix": "sp",
+    "body": [
+      "!!SP"
+    ],
+    "description": "!!SP"
+  },
+  "SR - !!SR": {
+    "prefix": "sr",
+    "body": [
+      "!!SR"
+    ],
+    "description": "!!SR"
+  },
+  "SS - !!SS": {
+    "prefix": "ss",
+    "body": [
+      "!!SS"
+    ],
+    "description": "!!SS"
+  },
+  "ST - !!ST": {
+    "prefix": "st",
+    "body": [
+      "!!ST"
+    ],
+    "description": "!!ST"
+  },
+  "SW - !!SW": {
+    "prefix": "sw",
+    "body": [
+      "!!SW"
+    ],
+    "description": "!!SW"
+  },
+  "SY - !!SY": {
+    "prefix": "sy",
+    "body": [
+      "!!SY"
+    ],
+    "description": "!!SY"
+  },
+  "TM - !!TM": {
+    "prefix": "tm",
+    "body": [
+      "!!TM"
+    ],
+    "description": "!!TM"
+  },
+  "TR - !!TR": {
+    "prefix": "tr",
+    "body": [
+      "!!TR"
+    ],
+    "description": "!!TR"
+  },
+  "UN - !!UN": {
+    "prefix": "un",
+    "body": [
+      "!!UN:"
+    ],
+    "description": "!!UN"
+  },
+  "UR - !!UR": {
+    "prefix": "ur",
+    "body": [
+      "!!UR"
+    ],
+    "description": "!!UR"
+  },
+  "VR - !!VR": {
+    "prefix": "vr",
+    "body": [
+      "!!VR"
+    ],
+    "description": "!!VR"
+  },
+  "WG - !!WG": {
+    "prefix": "wg",
+    "body": [
+      "!!WG"
+    ],
+    "description": "!!WG"
+  },
+  "WH - !!WH": {
+    "prefix": "wh",
+    "body": [
+      "!!WH"
+    ],
+    "description": "!!WH"
+  },
+  "WM - !!WM": {
+    "prefix": "wm",
+    "body": [
+      "!!WM"
+    ],
+    "description": "!!WM"
+  },
+  "WT - !!WT": {
+    "prefix": "wt",
+    "body": [
+      "!!WT"
+    ],
+    "description": "!!WT"
+  },
+  "EXIT TRIGGER - !!FU:E;": {
+    "prefix": "exi",
+    "body": [
+      "!!FU:E;"
+    ],
+    "description": "EXIT TRIGGER"
+  },
+  "EXIT IF - !!FU&...:E;": {
+    "prefix": "exif",
+    "body": [
+      "!!FU&${1}:E;$0"
+    ],
+    "description": "EXIT IF"
+  },
+  "EXIT IF .. OR .. - !!FU|...:E;": {
+    "prefix": "exifo",
+    "body": [
+      "!!FU|${1}/${2}:E;$0"
+    ],
+    "description": "EXIT IF .. OR .."
+  },
+  "mes - !!IF:M (inline message)": {
+    "prefix": "mes",
+    "body": [
+      "!!IF:M${1};$0"
+    ],
+    "description": "!!IF:M"
+  },
+  "dump - !!IF:M (dump)": {
+    "prefix": "dump",
+    "body": [
+      "!!IF:M%${1}%;$0"
+    ],
+    "description": "!!IF:M dump"
+  },
+  "echo - !!IF:L (echo)": {
+    "prefix": "echo",
+    "body": [
+      "!!IF:L%${1}%;$0"
+    ],
+    "description": "!!IF:L echo"
+  },
+  "_AE - !?AE": {
+    "prefix": "_ae",
+    "body": [
+      "!?AE"
+    ],
+    "description": "!?AE"
+  },
+  "_BA - !?BA": {
+    "prefix": "_ba",
+    "body": [
+      "!?BA"
+    ],
+    "description": "!?BA"
+  },
+  "_BF - !?BF": {
+    "prefix": "_bf",
+    "body": [
+      "!?BF"
+    ],
+    "description": "!?BF"
+  },
+  "_BG - !?BG": {
+    "prefix": "_bg",
+    "body": [
+      "!?BG"
+    ],
+    "description": "!?BG"
+  },
+  "_BR - !?BR": {
+    "prefix": "_br",
+    "body": [
+      "!?BR"
+    ],
+    "description": "!?BR"
+  },
+  "_CM - !?CM": {
+    "prefix": "_cm",
+    "body": [
+      "!?CM"
+    ],
+    "description": "!?CM"
+  },
+  "_CO - !?CO": {
+    "prefix": "_co",
+    "body": [
+      "!?CO"
+    ],
+    "description": "!?CO"
+  },
+  "_DL - !?DL": {
+    "prefix": "_dl",
+    "body": [
+      "!?DL"
+    ],
+    "description": "!?DL"
+  },
+  "_FU - !?FU": {
+    "prefix": "_fu",
+    "body": [
+      "!?FU(${1})"
+    ],
+    "description": "!?FU"
+  },
+  "_GE - !?GE": {
+    "prefix": "_ge",
+    "body": [
+      "!?GE"
+    ],
+    "description": "!?GE"
+  },
+  "_GM - !?GM": {
+    "prefix": "_gm",
+    "body": [
+      "!?GM"
+    ],
+    "description": "!?GM"
+  },
+  "_HE - !?HE": {
+    "prefix": "_he",
+    "body": [
+      "!?HE"
+    ],
+    "description": "!?HE"
+  },
+  "_HL - !?HL": {
+    "prefix": "_hl",
+    "body": [
+      "!?HL"
+    ],
+    "description": "!?HL"
+  },
+  "_HM - !?HM": {
+    "prefix": "_hm",
+    "body": [
+      "!?HM"
+    ],
+    "description": "!?HM"
+  },
+  "_IP - !?IP": {
+    "prefix": "_ip",
+    "body": [
+      "!?IP"
+    ],
+    "description": "!?IP"
+  },
+  "_LE - !?LE": {
+    "prefix": "_le",
+    "body": [
+      "!?LE"
+    ],
+    "description": "!?LE"
+  },
+  "_MF - !?MF": {
+    "prefix": "_mf",
+    "body": [
+      "!?MF"
+    ],
+    "description": "!?MF"
+  },
+  "_MG - !?MG": {
+    "prefix": "_mg",
+    "body": [
+      "!?MG"
+    ],
+    "description": "!?MG"
+  },
+  "_MM - !?MM": {
+    "prefix": "_mm",
+    "body": [
+      "!?MM"
+    ],
+    "description": "!?MM"
+  },
+  "_MR - !?MR": {
+    "prefix": "_mr",
+    "body": [
+      "!?MR"
+    ],
+    "description": "!?MR"
+  },
+  "_MW - !?MW": {
+    "prefix": "_mw",
+    "body": [
+      "!?MW"
+    ],
+    "description": "!?MW"
+  },
+  "_OB - !?OB": {
+    "prefix": "_ob",
+    "body": [
+      "!?OB"
+    ],
+    "description": "!?OB"
+  },
+  "_PI - !?PI": {
+    "prefix": "_pi",
+    "body": [
+      "!?PI"
+    ],
+    "description": "!?PI"
+  },
+  "_SN - !?SN": {
+    "prefix": "_sn",
+    "body": [
+      "!?SN"
+    ],
+    "description": "!?SN"
+  },
+  "_TH - !?TH": {
+    "prefix": "_th",
+    "body": [
+      "!?TH"
+    ],
+    "description": "!?TH"
+  },
+  "_TL - !?TL": {
+    "prefix": "_tl",
+    "body": [
+      "!?TL"
+    ],
+    "description": "!?TL"
+  },
+  "_TM - !?TM": {
+    "prefix": "_tm",
+    "body": [
+      "!?TM"
+    ],
+    "description": "!?TM"
+  }
+}
