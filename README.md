@@ -1,5 +1,5 @@
 # ERM Language Support - VS Code 插件
-🌐 For other language: [English](README_en.md)
+🌐 For other language: [English](README.en.md)
 
 专为《英雄无敌3》系列 ERM 脚本开发打造的 VS Code 扩展，完整迁移自 Sublime Text 下的 ERM 工具链（ErmToggleCodeComment、ErmFormatInlineComment、语法/补全/片段文件），提供语法高亮、代码片段、自动补全、注释切换/格式化等核心能力。
 
@@ -27,5 +27,5 @@
 > ⚠️ Windows 环境下避免使用 Git Bash 执行编译（可能触发路径解析异常），推荐用 CMD/PowerShell。
 1. 克隆仓库：
    ```bash
-   git clone https://github.com/你的用户名/erm-language-support.git
+   git clone https://github.com/kouyx/ERM-language-support-for-VS-code.git
    cd erm-language-support

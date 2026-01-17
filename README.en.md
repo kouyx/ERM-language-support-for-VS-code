@@ -27,5 +27,5 @@ A VS Code extension providing full support for ERM (Heroes of Might and Magic) s
 > ⚠️ On Windows, avoid using Git Bash for compilation (it may trigger path resolution errors) — CMD/PowerShell is recommended.
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/erm-language-support.git
+   git clone https://github.com/kouyx/ERM-language-support-for-VS-code.git
    cd erm-language-support

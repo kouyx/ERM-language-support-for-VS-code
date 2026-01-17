@@ -2,9 +2,15 @@
   "name": "erm-language-support",
   "displayName": "ERM Language Support",
   "version": "0.1.0",
+  "publisher": "kouyx",
   "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
+  "keywords": ["erm", "heroes of might and magic III", "H3.5", "syntax", "snippets"],
   "engines": {
     "vscode": "^1.108.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kouyx/ERM-language-support-for-VS-code.git"
   },
   "categories": [
     "Programming Languages",
