@@ -1,7 +1,7 @@
 {
   "name": "erm-language-support",
   "displayName": "ERM Language Support",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
   "engines": {
     "vscode": "^1.108.0"
