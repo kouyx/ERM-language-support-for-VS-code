@@ -20,7 +20,7 @@
 
 ## 📦 安装方式
 ### 方式 1：安装 VSIX 包（推荐）
-1. 从仓库 [Releases](https://github.com/你的用户名/erm-language-support/releases) 下载最新版 `erm-language-support-x.x.x.vsix`；
+1. 从仓库 [Releases](https://github.com/kouyx/ERM-language-support-for-VS-code/releases) 下载最新版 `erm-language-support-x.x.x.vsix`；
 2. 打开 VS Code → 扩展面板（`Ctrl+Shift+X`）→ 右上角 `...` → 「从 VSIX 安装」→ 选择下载的 VSIX 文件。
 
 ### 方式 2：源码构建（开发调试用）

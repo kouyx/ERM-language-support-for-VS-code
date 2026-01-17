@@ -20,7 +20,7 @@ A VS Code extension providing full support for ERM (Heroes of Might and Magic) s
 
 ## 📦 Installation
 ### Option 1: Install from VSIX (Recommended)
-1. Download the latest `erm-language-support-x.x.x.vsix` from the [Releases](https://github.com/your-username/erm-language-support/releases) page.
+1. Download the latest `erm-language-support-x.x.x.vsix` from the [Releases](https://github.com/kouyx/ERM-language-support-for-VS-code/releases) page.
 2. Open VS Code → Extensions (`Ctrl+Shift+X`) → Click `...` (top-right) → `Install from VSIX...` → Select the downloaded VSIX file.
 
 ### Option 2: Build from Source (For Development)
