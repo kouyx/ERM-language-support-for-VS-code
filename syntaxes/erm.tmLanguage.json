@@ -24,8 +24,7 @@
     },
 
     "comment": {
-      "begin": ";",
-      "end": "$",
+      "match": "^(?!\\s*!).*$",
       "name": "comment.line.erm"
     },
 
@@ -38,6 +37,7 @@
       "end": "$",
       "name": "receiver.erm",
       "patterns": [
+        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" },
         { "match": "[A-Z]", "name": "command.erm" }
       ]
@@ -52,6 +52,7 @@
       "end": "$",
       "name": "receiver.erm",
       "patterns": [
+        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" }
       ]
     },
@@ -68,6 +69,7 @@
       "end": "$",
       "name": "trigger.erm",
       "patterns": [
+        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" }
       ]
     },
