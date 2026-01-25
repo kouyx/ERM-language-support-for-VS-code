@@ -1,31 +1,39 @@
-# ERM Language Support - VS Code 插件
-🌐 For other language: [English](README.en.md)
+# ERM Language Support for VS Code
+🌐 Language Version: [中文](README.cn.md)
 
-专为《英雄无敌3》系列 ERM 脚本开发打造的 VS Code 扩展，完整迁移自 Sublime Text 下的 ERM 工具链（ErmToggleCodeComment、ErmFormatInlineComment、语法/补全/片段文件），提供语法高亮、代码片段、自动补全、注释切换/格式化等核心能力。
+A VS Code extension providing full support for ERM (Heroes of Might and Magic) scripting — migrated from Sublime Text ERM tooling (ErmToggleCodeComment, ErmFormatInlineComment, syntax/completion/snippet files). It includes syntax highlighting, code snippets, auto-completion, comment toggling/formatting, and more.
 
-## 🚀 核心功能
-### ERM 脚本全量支持
-- **语法高亮**：完美复刻 Sublime Text `erm.sublime-syntax` 的语法规则，对 `.erm` 文件提供关键字、变量、注释高亮。
-- **代码片段**：内置常用 ERM 命令片段（if/else、set、on、re 等），迁移自 `erm_*.sublime-snippet` 文件。
-- **自动补全**：支持 ERM 关键字、常量、触发器、标准函数的智能补全，迁移自 `erm_*.sublime-completions` 文件。
-- **注释工具**：
-  - 注释切换：一键切换 ERM 命令注释状态（`!! ↔ *!`、`!? ↔ *?`、`!$ ↔ *$`、`!# ↔ *#`）。
-  - 注释格式化：行内注释对齐（固定/自适应缩进）、`//` 替换为 `[]` 包裹、自动收集变量到注释中。
+## 🚀 Features
+### Full ERM Script Support
+- **Syntax Highlighting**: Exact replication of Sublime Text's `erm.sublime-syntax` for `.erm` files (keywords, variables, comments).
+- **Code Snippets**: Predefined snippets for common ERM commands (if/else, set, on, re, etc.) — migrated from `erm_*.sublime-snippet`.
+- **Auto-Completion**: Smart completion for ERM keywords, constants, triggers, and standard functions — migrated from `erm_*.sublime-completions`.
+- **Comment Tools**:
+  - Toggle Comments: Switch ERM command comment status (`!! ↔ *!`, `!? ↔ *?`, `!$ ↔ *$`, `!# ↔ *#`).
+  - Format Comments: Align inline comments (fixed/adaptive indent), replace `//` with `[]`, auto-collect variables to comments.
 
-### 快捷键说明
-| 功能                | Windows/Linux 快捷键 | macOS 快捷键 |
-|---------------------|----------------------|--------------|
-| 切换 ERM 代码注释   | `Ctrl+Alt+C`         | `Cmd+Alt+C`  |
-| 格式化行内注释      | `Alt+F`              | `Option+F`   |
+### Keyboard Shortcuts
+| Feature                  | Windows/Linux | macOS          |
+|--------------------------|---------------|----------------|
+| Toggle ERM Code Comment  | `Ctrl+Alt+C`  | `Cmd+Alt+C`    |
+| Format Inline Comment    | `Alt+F`       | `Option+F`     |
 
-## 📦 安装方式
-### 方式 1：安装 VSIX 包（推荐）
-1. 从仓库 [Releases](https://github.com/kouyx/ERM-language-support-for-VS-code/releases) 下载最新版 `erm-language-support-x.x.x.vsix`；
-2. 打开 VS Code → 扩展面板（`Ctrl+Shift+X`）→ 右上角 `...` → 「从 VSIX 安装」→ 选择下载的 VSIX 文件。
+## 📦 Installation
+### Option 1: Install from VSIX (Recommended)
+1. Download the latest `erm-language-support-x.x.x.vsix` from the [Releases](https://github.com/kouyx/ERM-language-support-for-VS-code/releases) page.
+2. Open VS Code → Extensions (`Ctrl+Shift+X`) → Click `...` (top-right) → `Install from VSIX...` → Select the downloaded VSIX file.
 
-### 方式 2：源码构建（开发调试用）
-> ⚠️ Windows 环境下避免使用 Git Bash 执行编译（可能触发路径解析异常），推荐用 CMD/PowerShell。
-1. 克隆仓库：
-   ```bash
-   git clone https://github.com/kouyx/ERM-language-support-for-VS-code.git
-   cd erm-language-support
+### Option 2: Build from Source (For Development)
+> ⚠️ On Windows, avoid using Git Bash for compilation (it may trigger path resolution errors) — CMD/PowerShell is recommended.
+1. Clone the repository:
+  ```bash
+    #  Clone the repository
+    git clone https://github.com/kouyx/ERM-language-support-for-VS-code.git
+    cd erm-language-support
+    # Install dependencies (use CMD/PowerShell to avoid path issues)
+    npm install
+    #  Compile source code
+    npm run compile
+    # Press F5 to launch debug or package VSIX
+    vsce package
+  ```
