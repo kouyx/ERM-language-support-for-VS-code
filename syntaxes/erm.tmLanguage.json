@@ -6,14 +6,12 @@
   "firstLineMatch": "^ZVSE",
   "patterns": [
     { "include": "#header" },
-    { "include": "#comment" },
-
     { "include": "#receiver_bangbang" },
     { "include": "#instruction_banghash" },
-
     { "include": "#trigger_fun" },
     { "include": "#trigger_misc" },
-
+    { "include": "#inline_comment" },
+    { "include": "#comment" },
     { "include": "#erm_operator" }
   ],
 
@@ -24,41 +22,39 @@
     },
 
     "comment": {
-      "match": "^(?!\\s*!).*$",
+      "match": "^\\s*(?!!\\w|!\\?\\w|!#\\w).*$",
       "name": "comment.line.erm"
     },
 
     "receiver_bangbang": {
-      "begin": "(!!)([A-Za-z]{2})",
+      "begin": "\\s*(!!)([A-Za-z]{2})",
       "beginCaptures": {
         "1": { "name": "keyword.operator.receiver.erm" },
         "2": { "name": "keyword.operator.receiver_name.erm" }
       },
-      "end": "$",
+      "end": "(?=;)",
       "name": "receiver.erm",
       "patterns": [
-        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" },
         { "match": "[A-Z]", "name": "command.erm" }
       ]
     },
 
     "instruction_banghash": {
-      "begin": "(!#)([A-Z]{2})",
+      "begin": "\\s*(!#)([A-Z]{2})",
       "beginCaptures": {
         "1": { "name": "keyword.operator.instruction.erm" },
         "2": { "name": "keyword.operator.instruction_name.erm" }
       },
-      "end": "$",
+      "end": "(?=;)",
       "name": "receiver.erm",
       "patterns": [
-        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" }
       ]
     },
 
     "trigger_fun": {
-      "begin": "(!\\?FU)(?:(?:(\\d+)|(\\()([^)]+)(\\)))?)",
+      "begin": "\\s*(!\\?FU)(?:(?:(\\d+)|(\\()([^)]+)(\\)))?)",
       "beginCaptures": {
         "1": { "name": "keyword.operator.trigger.erm" },
         "2": { "name": "entity.name.type.trigger.erm" },
@@ -66,19 +62,24 @@
         "4": { "name": "entity.name.type.trigger.erm" },
         "5": { "name": "decorator.function_name.erm" }
       },
-      "end": "$",
+      "end": "(?=;)",
       "name": "trigger.erm",
       "patterns": [
-        { "match": ";.*$", "name": "comment.inline.erm" },
         { "include": "#erm_operator" }
       ]
     },
 
     "trigger_misc": {
-      "match": "(![?$][A-Z]{2})",
+      "match": "\\s*(![?$][A-Z]{2})",
       "captures": {
         "1": { "name": "keyword.operator.trigger.erm" }
       }
+    },
+
+    "inline_comment": {
+      "begin": ";",
+      "end": "(?=!!|!\\?|!#)|$",
+      "name": "comment.inline.erm"
     },
 
     "string_caret": {
