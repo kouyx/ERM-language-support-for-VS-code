@@ -1,7 +1,7 @@
 {
   "name": "erm-language-support",
   "displayName": "ERM Language Support",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "kouyx",
   "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
   "keywords": ["erm", "heroes of might and magic III", "H3.5", "syntax", "snippets"],
@@ -21,7 +21,8 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.108.0",
@@ -75,11 +76,15 @@
         "mac": "option+f",
         "when": "editorTextFocus && editorLangId == erm"
       }
+    ],
+    "themes": [
+      {
+        "label": "ERM Dark Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/erm-color-theme.json"
+      }
     ]
   },
   "activationEvents": [
-    "onLanguage:erm",
-    "onCommand:erm-language-support.toggleErmComment",
-    "onCommand:erm-language-support.formatErmInlineComment"
   ]
 }

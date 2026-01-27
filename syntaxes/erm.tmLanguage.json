@@ -10,15 +10,18 @@
     { "include": "#instruction_banghash" },
     { "include": "#trigger_fun" },
     { "include": "#trigger_misc" },
-    { "include": "#inline_comment" },
     { "include": "#comment" },
-    { "include": "#erm_operator" }
+    { "include": "#inline_comment" },
+    { "include": "#erm_operator" },
+    { "include": "#constants" },
+    { "include": "#operators" },
+    { "include": "#strings" }
   ],
 
   "repository": {
     "header": {
-      "match": "^ZVSE2?",
-      "name": "keyword.operator.erm"
+      "match": "^(ZVSE2?)",
+      "name": "keyword.control.header.erm"
     },
 
     "comment": {
@@ -27,82 +30,172 @@
     },
 
     "receiver_bangbang": {
-      "begin": "\\s*(!!)([A-Za-z]{2})",
+      "begin": "(\\s*)(!!)([A-Za-z]{2})",
       "beginCaptures": {
-        "1": { "name": "keyword.operator.receiver.erm" },
-        "2": { "name": "keyword.operator.receiver_name.erm" }
+        "1": { "name": "punctuation.whitespace.erm" },
+        "2": { "name": "keyword.operator.receiver.erm" },
+        "3": { "name": "entity.name.function.receiver.erm" }
       },
       "end": "(?=;)",
-      "name": "receiver.erm",
+      "name": "meta.receiver.erm",
       "patterns": [
         { "include": "#erm_operator" },
-        { "match": "[A-Z]", "name": "command.erm" }
+        { 
+          "match": "\\b([A-Z]+)\\b", 
+          "name": "keyword.control.command.erm" 
+        },
+        { "include": "#constants" },
+        { "include": "#strings" },
+        {
+          "match": "&",
+          "name": "keyword.operator.logical.erm"
+        },
+        {
+          "match": "\\|",
+          "name": "keyword.operator.logical.erm"
+        }
       ]
     },
 
     "instruction_banghash": {
-      "begin": "\\s*(!#)([A-Z]{2})",
+      "begin": "(\\s*)(!#)([A-Z]{2})",
       "beginCaptures": {
-        "1": { "name": "keyword.operator.instruction.erm" },
-        "2": { "name": "keyword.operator.instruction_name.erm" }
+        "1": { "name": "punctuation.whitespace.erm" },
+        "2": { "name": "keyword.operator.instruction.erm" },
+        "3": { "name": "entity.name.function.instruction.erm" }
       },
       "end": "(?=;)",
-      "name": "receiver.erm",
+      "name": "meta.instruction.erm",
       "patterns": [
-        { "include": "#erm_operator" }
+        { "include": "#erm_operator" },
+        { "include": "#constants" },
+        { "include": "#strings" }
       ]
     },
 
     "trigger_fun": {
-      "begin": "\\s*(!\\?FU)(?:(?:(\\d+)|(\\()([^)]+)(\\)))?)",
+      "begin": "(\\s*)(!\\?FU)(?:(?:(\\d+)|(\\()([^)]+)(\\)))?)",
       "beginCaptures": {
-        "1": { "name": "keyword.operator.trigger.erm" },
-        "2": { "name": "entity.name.type.trigger.erm" },
-        "3": { "name": "decorator.function_name.erm" },
-        "4": { "name": "entity.name.type.trigger.erm" },
-        "5": { "name": "decorator.function_name.erm" }
+        "1": { "name": "punctuation.whitespace.erm" },
+        "2": { "name": "keyword.operator.trigger.erm" },
+        "3": { "name": "constant.numeric.trigger-id.erm" },
+        "4": { "name": "punctuation.parenthesis.open.erm" },
+        "5": { "name": "entity.name.function.custom.erm" },
+        "6": { "name": "punctuation.parenthesis.close.erm" }
       },
       "end": "(?=;)",
-      "name": "trigger.erm",
+      "name": "meta.trigger.function.erm",
       "patterns": [
-        { "include": "#erm_operator" }
+        { "include": "#erm_operator" },
+        { "include": "#constants" },
+        { "include": "#strings" }
       ]
     },
 
     "trigger_misc": {
-      "match": "\\s*(![?$][A-Z]{2})",
+      "match": "(\\s*)(![?$][A-Z]{2})",
       "captures": {
-        "1": { "name": "keyword.operator.trigger.erm" }
+        "1": { "name": "punctuation.whitespace.erm" },
+        "2": { "name": "keyword.operator.trigger.erm" }
       }
     },
 
     "inline_comment": {
-      "begin": ";",
+      "begin": "(;)",
       "end": "(?=!!|!\\?|!#)|$",
-      "name": "comment.inline.erm"
+      "beginCaptures": {
+        "1": { "name": "punctuation.terminator.statement.erm" }
+      },
+      "contentName": "comment.inline.erm",
+      "patterns": [
+        {
+          "match": "TODO|FIXME|NOTE|HACK|BUG|XXX",
+          "name": "keyword.other.todo.erm"
+        }
+      ]
     },
 
     "string_caret": {
       "begin": "\\^",
       "end": "\\^",
-      "name": "string.caret.erm",
+      "name": "string.quoted.caret.erm",
       "patterns": [
         {
           "match": "%(?:%|\\\\:|\\\\\"|[a-zA-Z]?\\([^\\)\\r\\n]*\\)|[a-zA-Z][a-zA-Z0-9]*)",
-          "name": "keyword.operator.interpolation.erm"
+          "name": "constant.character.escape.interpolation.erm"
+        }
+      ]
+    },
+
+    "strings": {
+      "patterns": [
+        { "include": "#string_caret" }
+      ]
+    },
+
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b(\\d+)\\b",
+          "name": "constant.numeric.integer.erm"
+        },
+        {
+          "match": "\\b(?:true|false)\\b",
+          "name": "constant.language.boolean.erm"
+        },
+        {
+          "match": "\\b(?:[A-Z_]+)\\b",
+          "name": "constant.other.symbol.erm"
+        }
+      ]
+    },
+
+    "operators": {
+      "patterns": [
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.erm"
+        },
+        {
+          "match": "[=!<>]=|[<>]",
+          "name": "keyword.operator.comparison.erm"
+        },
+        {
+          "match": "[+\\-*%]",
+          "name": "keyword.operator.arithmetic.erm"
+        },
+        {
+          "match": "[:;,]",
+          "name": "punctuation.separator.erm"
         }
       ]
     },
 
     "erm_operator": {
       "patterns": [
-        { "include": "#string_caret" },
-        { "match": "([g-t]|[xyvzwefc](?:-?\\d+)?)", "name": "variable.erm" },
-        { "match": "\\d+", "name": "constant.numeric.erm" },
-        { "match": "\\([^)]+\\)", "name": "constant.named.erm" },
-        { "match": "\\[[^\\]]+\\]", "name": "variable.label.erm" },
-        { "match": "@[^@]*@?", "name": "string.macro_declaration.erm" },
-        { "match": "\\$[^$]*\\$?", "name": "string.macro.erm" }
+        { "include": "#strings" },
+        { 
+          "match": "([g-t]|[xyvzwefc](?:-?\\d+)?)", 
+          "name": "variable.parameter.register.erm" 
+        },
+        { "include": "#constants" },
+        { 
+          "match": "\\([^)]+\\)", 
+          "name": "constant.other.named-constant.erm" 
+        },
+        { 
+          "match": "\\[[^\\]]+\\]", 
+          "name": "variable.other.label.erm" 
+        },
+        { 
+          "match": "@[^@]*@?", 
+          "name": "entity.name.tag.macro-declaration.erm" 
+        },
+        { 
+          "match": "\\$[^$]*\\$?", 
+          "name": "entity.name.tag.macro-usage.erm" 
+        },
+        { "include": "#operators" }
       ]
     }
   }
