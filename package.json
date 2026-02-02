@@ -1,7 +1,7 @@
 {
   "name": "erm-language-support",
   "displayName": "ERM Language Support",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "kouyx",
   "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
   "keywords": ["erm", "heroes of might and magic III", "H3.5", "syntax", "snippets"],
@@ -82,11 +82,11 @@
         "textMateRules": [
           {
             "scope": ["comment.line.erm", "comment.inline.erm"],
-            "settings": { "foreground": "#888888" }
+            "settings": { "foreground": "#7285b7", "fontStyle": "italic" }
           },
           {
             "scope": "keyword.other.todo.erm",
-            "settings": { "foreground": "#FF6B6B", "fontStyle": "italic" }
+            "settings": { "foreground": "#FF6B6B"}
           },
           {
             "scope": "keyword.control.header.erm",
@@ -126,7 +126,7 @@
           },
           {
             "scope": ["variable.erm", "variable.parameter.register.erm"],
-            "settings": { "foreground": "#9CDCFE" }
+            "settings": { "foreground": "#4EC9B0" }
           },
           {
             "scope": ["constant.numeric.erm", "constant.numeric.integer.erm", "constant.numeric.trigger-id.erm"],
@@ -166,7 +166,7 @@
           },
           {
             "scope": "constant.language.boolean.erm",
-            "settings": { "foreground": "#569CD6" }
+            "settings": { "foreground": "#CE9178" }
           },
           {
             "scope": "constant.other.symbol.erm",
@@ -189,8 +189,8 @@
             "settings": { "foreground": "#D4D4D4" }
           },
           {
-            "scope": "punctuation.separator.erm",
-            "settings": { "foreground": "#D4D4D4" }
+            "scope": ["punctuation.separator.erm", "punctuation.terminator.statement.erm"],
+            "settings": { "foreground": "#FFFFFF", "fontStyle": "bold"}
           },
           {
             "scope": ["punctuation.parenthesis.open.erm", "punctuation.parenthesis.close.erm"],

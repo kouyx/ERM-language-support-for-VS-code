@@ -136,7 +136,7 @@
     "constants": {
       "patterns": [
         {
-          "match": "\\b(\\d+)\\b",
+          "match": "\\d+",
           "name": "constant.numeric.integer.erm"
         },
         {
@@ -175,8 +175,12 @@
       "patterns": [
         { "include": "#strings" },
         { 
-          "match": "([g-t]|[xyvzwefc](?:-?\\d+)?)", 
+          "match": "([evwxyz](?:-?\\d+)?)",
           "name": "variable.parameter.register.erm" 
+        },
+        {
+          "match": "([A-Z])", 
+          "name": "keyword.control.command.erm"
         },
         { "include": "#constants" },
         { 
