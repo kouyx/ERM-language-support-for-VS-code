@@ -30,7 +30,7 @@
       "beginCaptures": {
         "1": { "name": "punctuation.whitespace.erm" },
         "2": { "name": "keyword.operator.receiver.erm" },
-        "3": { "name": "keyword.control.flow.erm" } 
+        "3": { "name": "keyword.control.flow.erm" }
       },
       "end": "(?=;)",
       "patterns": [
@@ -54,9 +54,9 @@
       "name": "meta.receiver.erm",
       "patterns": [
         { "include": "#erm_operator" },
-        { 
-          "match": "\\b([A-Z]+)\\b", 
-          "name": "keyword.control.command.erm" 
+        {
+          "match": "\\b([A-Z]+)\\b",
+          "name": "keyword.control.command.erm"
         },
         { "include": "#constants" },
         { "include": "#strings" },
@@ -89,9 +89,9 @@
         "1": { "name": "punctuation.whitespace.erm" },
         "2": { "name": "keyword.operator.trigger.erm" },
         "3": { "name": "constant.numeric.trigger-id.erm" },
-        "4": { "name": "punctuation.parenthesis.open.erm" },
+        "4": { "name": "punctuation.section.parens.begin.erm" },
         "5": { "name": "entity.name.function.custom.erm" },
-        "6": { "name": "punctuation.parenthesis.close.erm" }
+        "6": { "name": "punctuation.section.parens.end.erm" }
       },
       "end": "(?=;)",
       "name": "meta.trigger.function.erm",
@@ -109,7 +109,7 @@
         "2": { "name": "keyword.operator.trigger.erm" }
       }
     },
-
+    
     "inline_comment": {
       "begin": "(;)",
       "end": "(?=!!|!\\?|!#)|$",
@@ -134,11 +134,11 @@
           "comment": "插值变量：括号分离版",
           "match": "(%)([a-zA-Z]?)(\\()([^\\)\\r\\n]*)(\\))",
           "captures": {
-            "1": { "name": "constant.character.escape.interpolation.erm" }, 
-            "2": { "name": "variable.other.erm" }, 
-            "3": { "name": "punctuation.section.parens.begin.erm" }, 
-            "4": { "name": "variable.interpolation.erm" }, 
-            "5": { "name": "punctuation.section.parens.end.erm" } 
+            "1": { "name": "constant.character.escape.interpolation.erm" },
+            "2": { "name": "variable.other.erm" },
+            "3": { "name": "punctuation.section.parens.begin.erm" },
+            "4": { "name": "variable.interpolation.erm" },
+            "5": { "name": "punctuation.section.parens.end.erm" }
           }
         },
         {
@@ -179,7 +179,7 @@
           "name": "keyword.operator.assignment.erm"
         },
         {
-          "match": "[=!<>]=|[<>]",
+          "match": "(?:[=!<>]=|[<>])",
           "name": "keyword.operator.comparison.erm"
         },
         {
@@ -196,30 +196,34 @@
     "erm_operator": {
       "patterns": [
         { "include": "#strings" },
-        { 
+        {
           "match": "([evwxyz](?:-?\\d+)?)",
-          "name": "variable.parameter.register.erm" 
+          "name": "variable.parameter.register.erm"
         },
         {
-          "match": "([A-Z])", 
+          "match": "([A-Z])",
           "name": "keyword.control.command.erm"
         },
         { "include": "#constants" },
         {
-          "match": "\\([^)]+\\)", 
-          "name": "constant.other.named-constant.erm" 
+          "match": "(\\()([^)]+)(\\))",
+          "captures": {
+            "1": { "name": "punctuation.section.parens.begin.erm" },
+            "2": { "name": "constant.other.named-constant.erm" },
+            "3": { "name": "punctuation.section.parens.end.erm" }
+          }
         },
-        { 
-          "match": "\\[[^\\]]+\\]", 
-          "name": "variable.other.label.erm" 
+        {
+          "match": "\\[[^\\]]+\\]",
+          "name": "variable.other.label.erm"
         },
-        { 
-          "match": "@[^@]*@?", 
-          "name": "entity.name.tag.macro-declaration.erm" 
+        {
+          "match": "@[^@]*@?",
+          "name": "entity.name.tag.macro-declaration.erm"
         },
-        { 
-          "match": "\\$[^$]*\\$?", 
-          "name": "entity.name.tag.macro-usage.erm" 
+        {
+          "match": "\\$[^$]*\\$?",
+          "name": "entity.name.tag.macro-usage.erm"
         },
         { "include": "#operators" }
       ]
