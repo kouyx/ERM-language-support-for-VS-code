@@ -85,6 +85,10 @@
             "settings": { "foreground": "#7285b7", "fontStyle": "italic" }
           },
           {
+            "scope": "keyword.control.flow.erm", 
+            "settings": { "fontStyle": "bold", "foreground": "#C586C0" } 
+          },
+          {
             "scope": "keyword.other.todo.erm",
             "settings": { "foreground": "#FF6B6B"}
           },
@@ -118,7 +122,7 @@
           },
           {
             "scope": ["decorator.function_name.erm", "entity.name.function.custom.erm"],
-            "settings": { "foreground": "#C586C0", "fontStyle": "italic" }
+            "settings": { "foreground": "#C586C0" }
           },
           {
             "scope": ["command.erm", "keyword.control.command.erm"],
@@ -157,8 +161,12 @@
             "settings": { "foreground": "#FFD700" }
           },
           {
-            "scope": "string.quoted.double.erm",
-            "settings": { "foreground": "#CE9178" }
+            "scope": "variable.interpolation.erm",
+            "settings": { "foreground": "#9CDCFE", "fontStyle": "italic" }
+          },
+          {
+            "scope": "constant.character.escape.interpolation.erm",
+            "settings": { "foreground": "#D7BA7D" }
           },
           {
             "scope": "constant.character.escape.erm",
@@ -190,7 +198,7 @@
           },
           {
             "scope": ["punctuation.separator.erm", "punctuation.terminator.statement.erm"],
-            "settings": { "foreground": "#FFFFFF", "fontStyle": "bold"}
+            "settings": { "foreground": "#FFFFFF"}
           },
           {
             "scope": ["punctuation.parenthesis.open.erm", "punctuation.parenthesis.close.erm"],
