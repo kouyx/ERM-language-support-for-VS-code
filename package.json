@@ -1,9 +1,10 @@
 {
   "name": "erm-language-support",
   "displayName": "ERM Language Support",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "kouyx",
   "description": "Full ERM script support for VS Code (syntax highlight, snippets, comment tools)",
+  "icon": "./icons/extension-icon.png",
   "keywords": ["erm", "heroes of might and magic III", "H3.5", "syntax", "snippets"],
   "engines": {
     "vscode": "^1.108.0"
@@ -35,7 +36,11 @@
         "id": "erm",
         "aliases": ["ERM", "ERM Script"],
         "extensions": [".erm"],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/file-icon.svg",
+          "dark": "./icons/file-icon.svg"
+        }
       }
     ],
     "grammars": [
@@ -83,16 +88,6 @@
           {
             "scope": [
               "keyword.operator.receiver.erm",
-              "keyword.operator.trigger.erm",
-              "keyword.operator.instruction.erm",
-              "keyword.control.header.erm"
-            ],
-            "settings": {
-              "foreground": "#569CD6"
-            }
-          },
-          {
-            "scope": [
               "entity.name.function.receiver.erm",
               "entity.name.function.instruction.erm",
               "keyword.control.command.erm"
@@ -102,31 +97,38 @@
             }
           },
           {
-            "name": "ERM: Control Flow (if, else, etc.)",
             "scope": [
-              "keyword.control.flow.erm"
+              "keyword.operator.receiver.erm"
+            ],
+            "settings": {
+            }
+          },
+          {
+            "scope": [
+              "keyword.operator.trigger.erm",
+              "keyword.control.header.erm"
+            ],
+            "settings": {
+              "foreground": "#C586C0"
+            }
+          },
+          {
+            "scope": [
+              "keyword.operator.instruction.erm"
+            ],
+            "settings": {
+              "foreground": "#D7BA7D" 
+            }
+          },
+          {
+            "scope": [
+              "keyword.control.flow.erm",
+              "entity.name.function.custom.erm",
+              "variable.other.label.erm"
             ],
             "settings": {
               "foreground": "#C586C0",
               "fontStyle": "bold"
-            }
-          },
-          {
-            "name": "ERM: Custom Functions (FU names)",
-            "scope": [
-              "entity.name.function.custom.erm"
-            ],
-            "settings": {
-              "foreground": "#DCDCAA" 
-            }
-          },
-          {
-            "name": "ERM: Labels",
-            "scope": [
-              "variable.other.label.erm"
-            ],
-            "settings": {
-              "foreground": "#CE9178"
             }
           },
           {
@@ -152,7 +154,8 @@
           {
             "scope": [
               "constant.other.named-constant.erm",
-              "constant.character.escape.interpolation.erm" 
+              "constant.character.escape.interpolation.erm",
+              "constant.character.escape.erm"
             ],
             "settings": {
               "foreground": "#D7BA7D"
